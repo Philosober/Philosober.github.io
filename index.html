@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
     <head>
         <meta charset="UTF-8" />
-        <title>Hexo</title>
-        <meta name="author" content="John Doe" />
-        <meta name="description" content="" />
+        <title>Philosober</title>
+        <meta name="author" content="田锦东" />
+        <meta name="description" content="Personal Blog" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
         <link rel="icon" href="/images/avatar.jpg" />
@@ -51,7 +51,7 @@
             <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <div class="desktop-menu">
         <a class="title" href="/">
-            <span>HEXO</span>
+            <span>PHILOSOBER</span>
         </a>
         
         <a href="/">
@@ -84,7 +84,7 @@
         <div class="curtain" @click="shouMenuItems = !shouMenuItems" v-show="shouMenuItems"></div>
         <div class="title" @click="shouMenuItems = !shouMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
+            <span>&emsp;PHILOSOBER</span>
         </div>
         <transition name="slide">
         <div class="items" v-show="shouMenuItems">
@@ -154,9 +154,9 @@
         <span class="loop"></span>
         <span class="info">
             <div class="wrap">
-                <h1>Hexo</h1>
+                <h1>Philosober</h1>
                 <h3></h3>
-                <h5></h5>
+                <h5>Personal Blog</h5>
             </div>
         </span>
     </div>
@@ -167,7 +167,7 @@
 
 <div class="post">
     <a href="/2023/04/02/%E5%9F%BA%E4%BA%8EHexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-        <h2 class="post-title"></h2>
+        <h2 class="post-title">个人博客部署教程（静态页面）</h2>
     </a>
     <div class="category-and-date">
         
@@ -183,34 +183,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="基于Hexo的个人博客搭建"><a href="#基于Hexo的个人博客搭建" class="headerlink" title="基于Hexo的个人博客搭建"></a>基于Hexo的个人博客搭建</h1><h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><p>安装 hexo 之前，需要有 git 和 nodejs。大家自行在网上搜索解决。</p>
-<p>安装完 nodejs，通过以下命令，就可以安装 Hexo：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hexo建站"><a href="#Hexo建站" class="headerlink" title="Hexo建站"></a>Hexo建站</h2><p>以下命令会初始化一个 <code>my-blog</code> 的 hexo 站点目录。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"></span><br><span class="line">cd my-blog</span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>目录结构如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hexo服务器"><a href="#Hexo服务器" class="headerlink" title="Hexo服务器"></a>Hexo服务器</h2><p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
-
-
-<p>服务器安装完成后，通过以下命令启动服务器：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>浏览器中可以通过 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 来对站点进行预览。</p>
-<p>效果如下：</p>
-<p><img src="https://raw.githubusercontent.com/Philosober/Photo-Inventory/main/Photo/202304022317527.png" alt="image-20230402231724758"></p>
-<h2 id="一键部署Hexo站点到-github"><a href="#一键部署Hexo站点到-github" class="headerlink" title="一键部署Hexo站点到 github"></a>一键部署Hexo站点到 github</h2><p>准备好对应的<code>github.io</code>仓库和<code>hexo-deployer-git</code>插件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>修改<code>_config.yml</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
-
-<p>站点部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure>
+            <h1 id="基于Hexo的个人博客搭建"><a href="#基于Hexo的个人博客搭建" class="headerlink" title="基于Hexo的个人博客搭建"></a>基于Hexo的个人博客搭建</h1><h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2>
             
         </div>
     </div>
@@ -222,8 +195,8 @@
 </div>
 
 <div class="post">
-    <a href="/2023/03/25/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/">
-        <h2 class="post-title">个人博客部署教程</h2>
+    <a href="/2023/04/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/">
+        <h2 class="post-title">个人博客部署教程（动态页面）</h2>
     </a>
     <div class="category-and-date">
         
@@ -231,7 +204,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/3/25
+            2023/4/1
         </span>
         
         
@@ -240,174 +213,6 @@
         <div class="content" v-pre>
             
             <p>发布一个基于wordpress的动态博客搭建</p>
-<h2 id="Mysql的使用"><a href="#Mysql的使用" class="headerlink" title="Mysql的使用"></a>Mysql的使用</h2><p>注：该笔记由chatgpt生成</p>
-<h3 id="ubuntu安装Mysql"><a href="#ubuntu安装Mysql" class="headerlink" title="ubuntu安装Mysql"></a>ubuntu安装Mysql</h3><p>好的，以下是在Ubuntu 20.04上安装MySQL的步骤：</p>
-<ol>
-<li><p>打开终端并更新包列表：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装MySQL Server软件包：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure>
-
-<p>在此过程中，您可能会被要求设置MySQL root用户的密码。请记住此密码，因为您将需要在以后访问MySQL数据库时使用它。</p>
-</li>
-<li><p>确认MySQL Server已启动：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status mysql</span><br></pre></td></tr></table></figure>
-
-<p>如果MySQL Server已启动，您将看到一条消息，其中包含<code>active (running)</code>字样。如果未启动，则可以使用以下命令启动它：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>确认<code>MySQL Server</code>会在系统启动时自动启动：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable mysql</span><br></pre></td></tr></table></figure>
-
-<p>如果成功设置，您将看到一条消息，其中包含<code>Created symlink</code>字样。</p>
-</li>
-<li><p>选择性地，您可以运行MySQL安全性脚本，以加强MySQL服务器的安全性：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
-
-<p>在运行此脚本期间，您将被要求执行以下操作：</p>
-<ul>
-<li>更改root用户的密码（如果您没有在安装期间设置密码）</li>
-<li>删除匿名用户</li>
-<li>禁用root用户的远程登录</li>
-<li>删除测试数据库</li>
-<li>刷新特权表</li>
-</ul>
-<p>这些步骤可以帮助保护您的MySQL服务器。</p>
-</li>
-</ol>
-<p>现在，您已经成功安装了MySQL Server。您可以使用以下命令连接到MySQL服务器：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>如果没有在<code>-p</code>后输入密码，这将提示您输入MySQL root用户的密码。</p>
-<p>输入密码后，您将看到MySQL命令行提示符，您可以在此处执行MySQL命令。</p>
-<h3 id="添加新用户以访问Mysql"><a href="#添加新用户以访问Mysql" class="headerlink" title="添加新用户以访问Mysql"></a>添加新用户以访问Mysql</h3><p><strong>当您在Ubuntu 20.04上安装了MySQL后，默认情况下只能使用root用户访问MySQL数据库。</strong>如果您希望其他用户能够访问MySQL数据库，则需要创建一个新的MySQL用户并授予该用户访问权限。</p>
-<p>下面是创建新用户并为其授予访问权限的步骤：</p>
-<ol>
-<li><p>以root用户身份登录到MySQL：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建新的MySQL用户：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">&#x27;newuser&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;password&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在此命令中，</p>
-<ul>
-<li><p>将<code>newuser</code>替换为您想要创建的用户名，</p>
-</li>
-<li><p>将<code>password</code>替换为您为该用户设置的密码。</p>
-</li>
-</ul>
-<p><strong>请注意，您必须指定“@localhost”，以便该用户仅能在本地访问MySQL服务器。</strong></p>
-<p>另附：删除用户</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">USER</span> <span class="string">&#x27;username&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为新用户授予访问权限：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;newuser&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在此命令中，<code>*.*</code><strong>表示授予该用户访问所有数据库和表的权限</strong>。如果您只想授予该用户访问特定数据库或表的权限，则需要更改此命令。（关于<code>Grant</code>授权命令）</p>
-</li>
-<li><p>刷新特权表：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<p>这将确保MySQL服务器立即更新新用户的特权。</p>
-</li>
-<li><p>退出MySQL：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>现在，新用户已被创建并授予访问MySQL数据库的权限。该用户可以使用以下命令连接到MySQL服务器：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u newuser -p</span><br></pre></td></tr></table></figure>
-
-<p>这将提示该用户输入其MySQL密码。然后，该用户可以在MySQL命令行提示符处执行MySQL命令。</p>
-<h3 id="远程访问Mysql"><a href="#远程访问Mysql" class="headerlink" title="远程访问Mysql"></a>远程访问Mysql</h3><p>如果您想允许用户从远程访问MySQL服务器，可以按照以下步骤执行：</p>
-<ol>
-<li><p>以root用户身份登录到MySQL：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建新用户：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;newuser&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27;;</span><br></pre></td></tr></table></figure>
-
-<p>在此命令中，将<code>newuser</code>替换为您想要创建的用户名，将<code>password</code>替换为您为该用户设置的密码。</p>
-<p><strong>请注意，您必须指定<code>@%</code>，以便该用户能够从任何远程IP地址访问MySQL服务器。</strong></p>
-</li>
-<li><p>授予新用户访问权限：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;newuser&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<p>在此命令中，<code>*.*</code>表示授予该用户访问所有数据库和表的权限。如果您只想授予该用户访问特定数据库或表的权限，则需要更改此命令。将“newuser”替换为您创建的用户名。</p>
-</li>
-<li><p>刷新特权表：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<p>这将确保MySQL服务器立即更新新用户的特权。</p>
-</li>
-<li><p>修改MySQL配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim/nano /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
-
-<p>在该文件中，找到以下行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
-
-<p>将其改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure>
-
-<p>这将允许MySQL服务器监听所有IP地址。</p>
-</li>
-<li><p>重启MySQL服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart mysql</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>现在，<strong>新用户已被创建并授予从任何远程IP地址访问MySQL服务器的权限</strong>。该用户可以使用以下命令在其他云服务器上连接到MySQL服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u newuser -p -h server_ip_address</span><br></pre></td></tr></table></figure>
-
-<p>在此命令中，<code>server_ip_address</code>是MySQL服务器的公共IP地址（别忘了打开云服务器的<code>3306</code>端口）。</p>
-<h2 id="在自己的云服务器上部署个人博客网站"><a href="#在自己的云服务器上部署个人博客网站" class="headerlink" title="在自己的云服务器上部署个人博客网站"></a>在自己的云服务器上部署个人博客网站</h2><h3 id="在云服务器上安装和配置mysql"><a href="#在云服务器上安装和配置mysql" class="headerlink" title="在云服务器上安装和配置mysql"></a>在云服务器上安装和配置mysql</h3><p>参见上面的教程</p>
-<h3 id="使用另外一台设备远程访问mysql"><a href="#使用另外一台设备远程访问mysql" class="headerlink" title="使用另外一台设备远程访问mysql"></a>使用另外一台设备远程访问mysql</h3><p>注：仅仅是为了测试远程访问（网络的连通性）</p>
-<h3 id="部署wordpress的docker"><a href="#部署wordpress的docker" class="headerlink" title="部署wordpress的docker"></a>部署wordpress的docker</h3><h4 id="wordpress简介"><a href="#wordpress简介" class="headerlink" title="wordpress简介"></a>wordpress简介</h4><p>​	WordPress是一款流行的自由开源的内容管理系统（CMS），它可以用于创建各种类型的网站，如博客、新闻门户、电子商务网站等。它基于PHP编程语言，使用MySQL数据库来存储内容和设置。WordPress提供了一个可定制的用户界面，让用户可以轻松地添加、编辑和发布内容。它还支持丰富的插件和主题生态系统，这些插件和主题可以扩展和改变网站的外观和功能。</p>
-<p>​	除此之外，WordPress还具有强大的社区支持，提供了大量的文档、视频教程、论坛和博客文章，帮助用户解决问题并了解如何更好地利用WordPress创建网站。</p>
-<p>​	总之，WordPress是一款功能强大、易于使用、可扩展的CMS，它可以帮助用户快速创建高质量的网站，并满足不同类型的网站需求。</p>
-<h3 id="启动wordpress的docker"><a href="#启动wordpress的docker" class="headerlink" title="启动wordpress的docker"></a>启动wordpress的docker</h3><p>有两种启动方式：</p>
-<ol>
-<li>命令行<code>-e</code>后接<code>wordpress</code>的环境变量（更多内容参考<code>docker hub</code>上面的介绍，本篇使用这种方式）</li>
-<li>使用<code>docker-compose.yml</code>的方式启动</li>
-</ol>
-<p>先拉取<code>wordpress</code>的<code>docker</code>镜像</p>
-<ol>
-<li>直接拉取</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull wordpress</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>从<code>cloud_computing</code>中拉取（需要注册一个<code>docker hub</code>的账号）</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull cloud_computing/wordpress</span><br></pre></td></tr></table></figure>
-
-<p>创建<code>wordpress container</code>并启动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm -d -p 8000:80 -p 49153:443 --name myWordpress wordpress</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><code>--rm</code>：停止该镜像时会直接删除镜像</li>
-<li><code>-p</code>：映射端口号（服务器&#x2F;本机端口:虚拟机端口）</li>
-<li><code>--name</code>：镜像名称</li>
-<li>最后加上想要使用的<code>docker</code>镜像名</li>
-</ol>
-<p>注：这里没有使用<code>-e</code>环境变量来告诉<code>wordpress docker</code>使用哪个数据库，因此在首次访问<code>IP:8000</code>时会叫你填写（后面会再提）</p>
-<h3 id="部署mysql的docker"><a href="#部署mysql的docker" class="headerlink" title="部署mysql的docker"></a>部署mysql的docker</h3><p>先拉取<code>mysql</code>的<code>docker</code>镜像（这里使用<code>mysql8.0</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:8.0</span><br></pre></td></tr></table></figure>
-
-<p>创建<code>mysql container</code>并启动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm -d -p 33160:3306 -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:8.0</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><code>3306</code>是外部访问<code>MySQL</code>的端口，需要映射到服务器端口<code>33160</code>（随便一个端口就行，只要在安全组中打开即可）</li>
-<li><code>-e</code>是<code>mysql docker</code>的环境变量</li>
-</ol>
-<p>进入<code>mysql01</code>容器中，创建<code>wordpress</code>数据库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it mysql01 /bin/bash</span><br><span class="line">mysql -uroot -p123456</span><br><span class="line">create database wordpress;</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问IP-云主机IP-8000以完成最后部署"><a href="#访问IP-云主机IP-8000以完成最后部署" class="headerlink" title="访问IP(云主机IP):8000以完成最后部署"></a>访问IP(云主机IP):8000以完成最后部署</h3><p>首次进入会出现以下内容，填写即可：</p>
-<img src="https://raw.githubusercontent.com/Philosober/Photo-Inventory/main/Photo/202303251112518.png" alt="image-20230325111224452" style="zoom:50%;" />
-
-<img src="https://raw.githubusercontent.com/Philosober/Photo-Inventory/main/Photo/202303251126530.png" alt="image-20230325111303761" style="zoom:50%;" />
-
-<p>至此，就完成了<code>wordpress</code>的全部部署，该部署方案使用了<code>docker</code>数据库，安全性较高。</p>
-
             
         </div>
     </div>
@@ -415,7 +220,7 @@
         
         
     </div>
-    <a href="/2023/03/25/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" class="go-post">阅读全文</a>
+    <a href="/2023/04/01/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -441,9 +246,9 @@
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name">John Doe</div>
+        <div class="name">田锦东</div>
         <div class="description">
-            <p>Description<br>…</p>
+            <p>田锦东的个人博客</p>
 
         </div>
         
@@ -467,11 +272,11 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Hexo
+            2022 - 2023 Philosober
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;田锦东
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
